@@ -15,9 +15,9 @@ except ImportError:
 
 class DatabaseEntityExtractor(EntityExtractor):
     """
-    This is a custom name extractor accessing a database that contains a list of first- and lastnames.
+    This is a custom entity extractor accessing a database that contains a list of entities.
     Infos about the database are stored in the config-file config.json.
-    This class performs (fuzzy-)matching of an input against every known name. The most similar names
+    This class performs (fuzzy-)matching of an input against every known entity. The most similar entities
     are returned as entities.
     """
 
