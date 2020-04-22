@@ -1,0 +1,2 @@
+fuzzyset==0.0.19
+PyMySQL==0.9.3

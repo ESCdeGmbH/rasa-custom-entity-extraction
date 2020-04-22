@@ -1,0 +1,13 @@
+{
+  "database_config": {
+    "host": "<host_ip_address>",
+    "user": "<database_user>",
+    "password": "<database_user_pw>",
+    "database": "<database_name>"
+  },
+  "database_queries": {
+    "firstnames": "SELECT name FROM NamesDB WHERE EntityType = 'firstname';",
+    "lastnames": "SELECT name FROM NamesDB WHERE EntityType = 'lastname';"
+  },
+  "minimumConfidence": 0.81
+}

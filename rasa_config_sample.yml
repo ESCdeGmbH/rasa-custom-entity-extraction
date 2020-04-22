@@ -1,0 +1,6 @@
+language: en
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: database_entity_extractor.DatabaseEntityExtractor
+    config: "/path/to/sample_config.json"
