@@ -3,7 +3,7 @@ from typing import Any, Dict, Optional, Text
 
 import rasa.utils.io
 from rasa.nlu.config import RasaNLUModelConfig
-from rasa.nlu.extractors import EntityExtractor
+from rasa.nlu.extractors.extractor import EntityExtractor
 from rasa.nlu.model import Metadata
 from rasa.nlu.training_data import Message, TrainingData
 
@@ -81,7 +81,7 @@ class LuisEntityExtractor(EntityExtractor):
                     if match[0] < self._min_confidence:
                         continue
                     match = {
-                        "start": token.offset,
+                        "start": token.start,
                         "end": token.end,
                         "value": entity["canonical"],
                         "confidence": match[0],

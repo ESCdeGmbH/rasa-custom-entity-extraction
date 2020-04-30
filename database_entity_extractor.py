@@ -4,7 +4,7 @@ from typing import Any, Dict, Optional, Text
 import pymysql
 import rasa.utils.io
 from rasa.nlu.config import RasaNLUModelConfig
-from rasa.nlu.extractors import EntityExtractor
+from rasa.nlu.extractors.extractor import EntityExtractor
 from rasa.nlu.model import Metadata
 from rasa.nlu.training_data import Message, TrainingData
 
@@ -97,7 +97,7 @@ class DatabaseEntityExtractor(EntityExtractor):
                 for match in fuzzy_matches:
                     if match[0] < self.min_confidence: continue # skip low-confidence entities
                     entity = {
-                        "start": token.offset,
+                        "start": token.start,
                         "end": token.end,
                         "value": match[1],
                         "confidence": match[0],
