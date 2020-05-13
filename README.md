@@ -1,6 +1,22 @@
 # Custom Entity Extraction for RASA
 This repository contains some custom entity extractors for RASA. Further details will follow below.
 
+## Simple Entity Extractor
+An entity extractor for Json files. A sample for such Json file can be found [here](rasa_simple_config_sample.json).
+
+A sample config for RASA:
+
+```yml
+language: en
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: simple_entity_extractor.SimpleEntityExtractor
+    config: "myconfig.json"
+    min_confidence: 0.8
+```
+
+
 ## Database Entity Extractor
 An entity extractor for [MySQL](https://www.mysql.com/). You can simply use the a database to extract entities via fuzzy sets. You have to define queries for the different entity types.
 
