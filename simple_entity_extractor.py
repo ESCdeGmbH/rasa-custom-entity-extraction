@@ -34,7 +34,7 @@ class SimpleEntityExtractor(EntityExtractor):
         if "config" not in parameters.keys():
             raise AttributeError(f"config not given: parameters contains {parameters.keys()}")
 
-        with open(parameters["config"]) as json_file:
+        with open(parameters["config"], encoding="utf-8-sig") as json_file:
             parsed = json.load(json_file)
         self._entities = self._load(parsed)
 
